@@ -3,8 +3,11 @@
 topdir=$(shell pwd)/..
 include ../Make.Rules
 
-LDLIBS += -lcap
-CFLAGS += -fPIC
+# Note (as the author of much of the Linux-PAM library, I am confident
+# that this next line does *not* require -lpam on it.) If you think it
+# does, *verify that it does*, and if you observe that it fails as
+# written (and you know why it fails), email me and explain why. Thanks!
+LDLIBS += -L../libcap -lcap
 
 all: pam_cap.so
 	$(MAKE) testcompile
@@ -17,7 +20,7 @@ pam_cap.so: pam_cap.o
 	$(LD) $(LDFLAGS) -o pam_cap.so $< $(LDLIBS)
 
 pam_cap.o: pam_cap.c
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) $(IPATH) -c $< -o $@
 
 testcompile: test.c pam_cap.o
 	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $+ -lpam -ldl $(LDLIBS)
