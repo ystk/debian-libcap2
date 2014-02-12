@@ -1,3 +1,68 @@
+libcap2 (1:2.22-1.2) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * Add preinst script for libcap2-bin to properly remove PAM module
+    on upgrade from libcap2-bin <= 1:2.22-1. (Closes: #673770)
+
+ -- Tobias Hansen <tobias.han@gmx.de>  Fri, 06 Jul 2012 20:02:14 +0200
+
+libcap2 (1:2.22-1.1) unstable; urgency=low
+
+  * Non-maintainer upload with permission from Torsten Werner.
+  * Apply Multiarch patch from Kees Cook.  Closes: #653186.
+  * debian/{control,rules,compat}: Build for Multi-arch.
+  * debian/{control,libpam-cap.*}: Split PAM module into separate binary
+    package so it can be built for Multi-arch separate from the -bins pkg.
+
+ -- Mark Hymers <mhy@debian.org>  Sun, 13 May 2012 10:28:44 +0100
+
+libcap2 (1:2.22-1) unstable; urgency=low
+
+  * New upstream released
+
+ -- Zhi Li <lizhi1215@gmail.com>  Thu, 28 Jul 2011 12:50:30 +0800
+
+libcap2 (1:2.21-3) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * 0003-refine-setcap-error-message.patch:refine setcap output on errors
+    (Closes: #633075)
+
+ -- Zhi Li <lizhi1215@gmail.com>  Wed, 20 Jul 2011 09:35:48 +0800
+
+libcap2 (1:2.21-2) unstable; urgency=low
+
+  [ Serge Hallyn ]
+  * 0002-support-getting-setting-capabilities-on-large-files.patch: patch from
+    upstream to enable setting capabilities on large files.
+    (Closes: #631134)
+
+  [ Torsten Werner ]
+  * Move package to alioth's collab-maint project.
+    * Use git instead of svn.
+    * Update Vcs-* headers in debian/control.
+
+  [ Zhi Li ]
+  * Modify long description in libcap2-bin/debian/control, remove those files that were not generated.
+    (Closes: #620345)
+
+ -- Torsten Werner <twerner@debian.org>  Mon, 11 Jul 2011 22:11:41 +0200
+
+libcap2 (1:2.21-1) unstable; urgency=low
+
+  * New upstream release.
+  * debian/patches/0001-fix-Makefiles.patch: link pam_cap against -lpam.
+    (Closes: #591410) (LP: #582769)
+
+ -- Serge Hallyn <serge.hallyn@ubuntu.com>  Fri, 20 May 2011 08:28:55 -0500
+
+libcap2 (1:2.20-1) unstable; urgency=low
+
+  * New upstream release.
+  * Remove all patches because they have been included upstream.
+
+ -- Torsten Werner <twerner@debian.org>  Fri, 11 Feb 2011 20:31:45 +0100
+
 libcap2 (1:2.19-3) unstable; urgency=high
 
   * Add a versioned dependency on libpam-runtime to libcap2-bin because

@@ -1,5 +1,5 @@
 #!/bin/sh
-# prerm script for libcap2-bin
+# prerm script for libpam-cap
 #
 # see: dh_installdeb(1)
 
