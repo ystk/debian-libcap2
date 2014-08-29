@@ -2,14 +2,31 @@
 
 DEB_HOST_MULTIARCH ?= $(shell dpkg-architecture -qDEB_HOST_MULTIARCH)
 
+DEB_BUILD_GNU_TYPE ?= $(shell dpkg-architecture -qDEB_BUILD_GNU_TYPE)
+DEB_HOST_GNU_TYPE  ?= $(shell dpkg-architecture -qDEB_HOST_GNU_TYPE)
+
+ifeq ($(DEB_BUILD_GNU_TYPE),$(DEB_HOST_GNU_TYPE))
+CC := gcc
+else
+CC := $(DEB_HOST_GNU_TYPE)-gcc
+endif
+
 %:
-	dh $@
+	dh ${@}
+
+override_dh_auto_build:
+	dh_auto_build -- CC=$(CC) BUILD_CC=gcc
 
 override_dh_auto_install:
 	dh_auto_install -- lib=lib/$(DEB_HOST_MULTIARCH) RAISE_SETFCAP=no
 
-override_dh_makeshlibs:
-	dh_makeshlibs -V 'libcap2 (>= 2.10)'
+	mkdir -p debian/tmp/usr/lib/$(DEB_HOST_MULTIARCH)
+	mv debian/tmp/lib/$(DEB_HOST_MULTIARCH)/*.so debian/tmp/usr/lib/$(DEB_HOST_MULTIARCH)
 
-get-orig-source:
-	-uscan --upstream-version 0
+override_dh_link:
+	dh_link -plibcap-dev lib/$(DEB_HOST_MULTIARCH)/$$(basename $$(readlink debian/tmp/usr/lib/$(DEB_HOST_MULTIARCH)/libcap.so)) usr/lib/$(DEB_HOST_MULTIARCH)/libcap.so
+
+	dh_link --remaining-packages
+
+override_dh_install:
+	dh_install --fail-missing

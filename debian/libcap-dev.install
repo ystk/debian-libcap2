@@ -1,3 +1,5 @@
-debian/tmp/usr/include/*
-debian/tmp/lib/*/lib*.so
-debian/tmp/lib/*/lib*.a
+usr/include
+lib/*/*.a
+usr/lib/*/*.so
+usr/lib/*/pkgconfig
+usr/share/man/man3

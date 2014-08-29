@@ -1,53 +1,105 @@
-This package was debianized by Torsten Werner <twerner@debian.org> on
-Fri Mar 21 16:35:46 CET 2008 based on the package 'libcap' that is
-maintained by Michael Vogt.
+Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: libcap
+Upstream-Contact: Andrew G. Morgan <morgan@kernel.org>
+Source: https://www.kernel.org/pub/linux/libs/security/linux-privs/libcap2/
 
-It was downloaded from
-http://www.eu.kernel.org/pub/linux/libs/security/linux-privs/libcap2/
+Files: *
+Copyright: 1997-2014 Andrew G. Morgan <morgan@linux.kernel.org>
+License: BSD-3-clause or GPL-2
 
-Upstream Author: Andrew G. Morgan <morgan@linux.kernel.org>
+Files: libcap/cap_text.c
+Copyright: 1997-2008 Andrew G. Morgan <morgan@linux.kernel.org>
+           1997 Andrew Main <zefram@dcs.warwick.ac.uk>
+License: BSD-3-clause or GPL-2
 
-Copyright: (c) 1999-2008 Andrew G. Morgan <morgan@linux.kernel.org>
+Files: libcap/include/sys/capability.h
+Copyright: 1997-2008 Andrew G. Morgan <morgan@kernel.org>
+           1997 Aleph One
+License: BSD-3-clause or GPL-2
 
-Unless otherwise *explicitly* stated, the following text describes the
-licensed conditions under which the contents of this libcap release
-may be used and distributed:
+Files: libcap/include/sys/securebits.h
+Copyright: 2010 Serge Hallyn <serue@us.ibm.com>
+License: BSD-3-clause or GPL-2
 
--------------------------------------------------------------------------
-Redistribution and use in source and binary forms of libcap, with
-or without modification, are permitted provided that the following
-conditions are met:
+Files: progs/old/sucap.c
+Copyright: 1998 Finn Arne Gangstad <finnag@guardian.no>
+License: BSD-3-clause or GPL-2
 
-1. Redistributions of source code must retain any existing copyright
-   notice, and this entire permission notice in its entirety,
-   including the disclaimer of warranties.
+Files: contrib/*
+Copyright: 2006, Matt Kern <matt.kern@undue.org>
+           2008, Andrew G. Morgan <morgan@linux.kernel.org>
+	   2008, Chris Friedhoff <chris@friedhoff.org>
+License: BSD-3-clause or GPL-2
 
-2. Redistributions in binary form must reproduce all prior and current
-   copyright notices, this list of conditions, and the following
-   disclaimer in the documentation and/or other materials provided
-   with the distribution.
+Files: debian/*
+Copyright: 2014 Daniel Baumann <mail@daniel-baumann.ch>
+           2014 Christian Kastner <debian@kvr.at>
+License: BSD-3-clause or GPL-2+
 
-3. The name of any author may not be used to endorse or promote
-   products derived from this software without their specific prior
-   written permission.
+Files: debian/manpages/*
+Copyright: 1997-2014 Andrew G. Morgan <morgan@linux.kernel.org>
+           2011 Scott Schaefer <saschaefer@neurodiverse.org>
+License: BSD-3-clause or GPL-2
 
-ALTERNATIVELY, this product may be distributed under the terms of the
-GNU General Public License, in which case the provisions of the GNU
-GPL are required INSTEAD OF the above restrictions.  (This clause is
-necessary due to a potential conflict between the GNU GPL and the
-restrictions contained in a BSD-style copyright.)
+License: BSD-3-clause
+ Redistribution and use in source and binary forms of libcap, with
+ or without modification, are permitted provided that the following
+ conditions are met:
+ .
+ 1. Redistributions of source code must retain any existing copyright
+    notice, and this entire permission notice in its entirety,
+    including the disclaimer of warranties.
+ .
+ 2. Redistributions in binary form must reproduce all prior and current
+    copyright notices, this list of conditions, and the following
+    disclaimer in the documentation and/or other materials provided
+    with the distribution.
+ .
+ 3. The name of any author may not be used to endorse or promote
+    products derived from this software without their specific prior
+    written permission.
+ .
+ THIS SOFTWARE IS PROVIDED ``AS IS'' AND ANY EXPRESS OR IMPLIED
+ WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+ MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+ IN NO EVENT SHALL THE AUTHOR(S) BE LIABLE FOR ANY DIRECT, INDIRECT,
+ INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+ BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS
+ OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+ ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR
+ TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
+ USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
+ DAMAGE.
 
-THIS SOFTWARE IS PROVIDED ``AS IS'' AND ANY EXPRESS OR IMPLIED
-WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
-MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
-IN NO EVENT SHALL THE AUTHOR(S) BE LIABLE FOR ANY DIRECT, INDIRECT,
-INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
-BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS
-OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
-ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR
-TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
-USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
-DAMAGE.
--------------------------------------------------------------------------
+License: GPL-2
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, version 2 of the License.
+ .
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ GNU General Public License for more details.
+ .
+ You should have received a copy of the GNU General Public License
+ along with this program. If not, see <http://www.gnu.org/licenses/>.
+ .
+ The complete text of the GNU General Public License
+ can be found in /usr/share/common-licenses/GPL-2 file.
 
-You can find the GPL in /usr/share/common-licenses/GPL
+License: GPL-2+
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 2 of the License, or
+ (at your option) any later version.
+ .
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ GNU General Public License for more details.
+ .
+ You should have received a copy of the GNU General Public License
+ along with this program. If not, see <http://www.gnu.org/licenses/>.
+ .
+ The complete text of the GNU General Public License
+ can be found in /usr/share/common-licenses/GPL-2 file.

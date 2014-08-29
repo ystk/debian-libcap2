@@ -1,3 +1,103 @@
+libcap2 (1:2.24-4) unstable; urgency=low
+
+  * debian/control:
+    - Set myself to maintainer. Closes: #756091
+    - Drop redundant Section
+    - Drop redundant Priority fields
+    - Add Multi-Arch field for libcap2-bin
+    - Point Vcs-* URLs to collab-maint
+  * debian/rules:
+    - Drop dh_builddeb override, xz is now default
+    - Drop override_dh_makeshlibs; a symbols file is provided now
+  * debian/copyright:
+    - Add myself
+    - Add missing copyright for manpages
+    - Add missing copyright for contrib/*
+  * debian/symbols:
+    - Create symbols file
+  * debian/watch:
+    - Create watch file
+  * debian/manpages:
+    - Fix typo in manpage name (getcaps -> getpcaps)
+    - Drop capsh.8, upstream ships capsh.1 now
+  * debian/source/options:
+    - Remove, as xz is now the default compression algo
+  * debian/patches (refreshed):
+    - Update headers to play more nicely with gbp-pq
+  * debian/patches (added):
+    - 0004-Don-t-hardcode-build-flags
+      Needed so that hardening flags get honored
+    - 0005-Syntax-fixes-for-man-pages
+
+ -- Christian Kastner <debian@kvr.at>  Sat, 26 Jul 2014 20:06:24 +0200
+
+libcap2 (1:2.24-3) unstable; urgency=medium
+
+  * I don't care anymore, not worth it.. orphaning.
+
+ -- Daniel Baumann <mail@daniel-baumann.ch>  Fri, 25 Jul 2014 20:51:41 +0200
+
+libcap2 (1:2.24-2) unstable; urgency=low
+
+  * Adding provides for libcap2-dev that got lost during rebase (Closes:
+    #755559).
+
+ -- Daniel Baumann <mail@daniel-baumann.ch>  Tue, 22 Jul 2014 10:55:23 +0200
+
+libcap2 (1:2.24-1) unstable; urgency=low
+
+  * Merging upstream version 2.24 (Closes: #734633): - in sync with
+    current kernels (Closes: #689035)
+  * Dropping unused orig-tar.sh.
+  * Marking package as linux-any only (Closes: #745186).
+  * Moving local manpages to subdirectory.
+  * Applied patch from Loïc Minier <loic.minier@linaro.org> to fix cross-
+    building by passing CC and BUILD_CC to dh_auto_make, based on a patch
+    by Colin Watson for the previous CDBS packaging, but adapted for the
+    new dh-based packaging (Closes: #645908).
+  * Adding manpages for capability.conf, getcaps, and pam_cap from Scott
+    Schaefer <saschaefer@neurodiverse.org> (Closes: #504606).
+  * Using xz explizitly for source tarballs.
+  * Adding dpkg-source local options to abort on upstream changes.
+  * Moving local pam-configs to local subdirectory.
+  * Dropping watch file.
+  * Dropping old README.source.
+  * Updating to standards version 3.9.5.
+  * Sorting fields in control.
+  * Doubling some fields in control for binary packages in order to avoid
+    implicit use.
+  * Removing useless whitespaces at EOL/EOF.
+  * Dropping pre-wheezy conflicts/replaces etc.
+  * Updating to debhelper version 9.
+  * Wrapping build-depends.
+  * Wrapping and sorting depends.
+  * Adding vcs fields.
+  * Harmonizing package descriptions.
+  * Building debian binary packages explicitly with xz compression.
+  * Rewriting copyright file in copyright format 1.0.
+  * Reworking debhelper install files.
+  * Dropping pre-wheezy libcap2-bin.preinst.
+  * Reworking debhelper maintainer scripts.
+  * Adding todo file.
+  * Refreshing fix-Makefiles.patch.
+  * Refresh refine-setcap-error-message.patch.
+  * Renaming and renumbering patches consistently.
+  * Adding patch from Adam Conrad <adconrad@ubuntu.com> to include
+    sys/xattr.h in sys/capability.h.
+  * Using curly braces in rules where appropriate.
+  * Running dh_install with --fail-missing.
+  * Correctly moving .so symlink to /usr in libcap-dev where it should be.
+  * Dropping useless suggests on libcap-dev.
+  * Prefixing readme with package name.
+
+ -- Daniel Baumann <mail@daniel-baumann.ch>  Fri, 18 Jul 2014 10:58:46 +0200
+
+libcap2 (1:2.22-2) unstable; urgency=low
+
+  * Taking over package from Torsten with thanks for his past work on it.
+
+ -- Daniel Baumann <mail@daniel-baumann.ch>  Wed, 09 Jul 2014 11:26:11 +0200
+
 libcap2 (1:2.22-1.2) unstable; urgency=low
 
   * Non-maintainer upload.

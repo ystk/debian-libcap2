@@ -1,0 +1,4 @@
+* rewrite manpages
+* rewrite readme
+* add debug package
+* rename source package to libcap
