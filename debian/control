@@ -2,7 +2,8 @@ Source: libcap2
 Section: libs
 Priority: optional
 Maintainer: Christian Kastner <debian@kvr.at>
-Standards-Version: 3.9.5
+Standards-Version: 3.9.6
+XS-Testsuite: autopkgtest
 Build-Depends:
  debhelper (>= 9),
  indent,
@@ -19,6 +20,8 @@ Multi-Arch: foreign
 Depends:
  ${shlibs:Depends},
  ${misc:Depends},
+Breaks: libcap-bin
+Replaces: libcap-bin
 Recommends: libpam-cap
 Description: POSIX 1003.1e capabilities (utilities)
  Libcap implements the user-space interfaces to the POSIX 1003.1e capabilities
@@ -41,6 +44,23 @@ Description: POSIX 1003.1e capabilities (library)
  powerful root privilege into a set of distinct privileges.
  .
  This package contains the shared library.
+
+Package: libcap2-dbg
+Section: debug
+Priority: extra
+Architecture: linux-any
+Multi-Arch: same
+Depends:
+ ${misc:Depends},
+ libcap2 (= ${binary:Version}),
+ libcap-dev (= ${binary:Version}),
+ libpam-cap (= ${binary:Version}),
+Description: POSIX 1003.1e capabilities (debug)
+ Libcap implements the user-space interfaces to the POSIX 1003.1e capabilities
+ available in Linux kernels. These capabilities are a partitioning of the all
+ powerful root privilege into a set of distinct privileges.
+ .
+ This package contains the debugging symbols.
 
 Package: libcap-dev
 Section: libdevel

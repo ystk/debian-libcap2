@@ -4,5 +4,4 @@ version=3
 # uncompressed tarball, and uscan currently does not have a mechanism to
 # implement this
 
-opts=\
 https://www.kernel.org/pub/linux/libs/security/linux-privs/libcap2/libcap-(.+).tar.xz
